@@ -1,0 +1,105 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Model files (large binary files)
+*.pt
+*.pth
+*.h5
+*.ckpt
+*.pb
+*.onnx
+*.tflite
+*.weights
+
+# Output directories (generated results)
+outputs/
+*.jpg
+*.png
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+
+# JSON files (generated results, but keep config files)
+outputs/**/*.json
+!**/configs/**/*.json
+!**/configs/**/*.yaml
+
+# Video files (can be large)
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.flv
+*.wmv
+
+# Logs
+*.log
+logs/
+
+# OS
+Thumbs.db
+.DS_Store
+*.swp
+*.swo
+
+# AlphaPose and OpenPose directories (keep structure but ignore large files)
+# Note: These directories are kept but large binaries/models are ignored
+AlphaPose/pretrained_models/*.pth
+AlphaPose/examples/res/
+openpose/models/*.caffemodel
+openpose/models/*.prototxt
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+*.cache
+
+# Data directories (uncomment if you don't want to track data)
+# frames/
+# videos/
+
+# Environment variables
+.env
+.env.local
+
