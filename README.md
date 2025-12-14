@@ -44,11 +44,52 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install opencv-python numpy pandas matplotlib scipy ultralytics mediapipe
 
 # Install tool-specific dependencies
-# - AlphaPose: must download F(https://github.com/MVIG-SJTU/AlphaPose)
-# - OpenPose: Pre-built binaries included in openpose/ directory
 # - YOLOv8: Installed via ultralytics package
 # - BlazePose: Installed via mediapipe package
 ```
+
+### Downloading AlphaPose and OpenPose
+
+**These directories are not included in the repository and must be downloaded separately:**
+
+#### AlphaPose Setup
+
+1. Clone the AlphaPose repository:
+   ```bash
+   git clone https://github.com/MVIG-SJTU/AlphaPose.git
+   ```
+
+2. Follow the installation instructions in the AlphaPose repository:
+   - Install dependencies (PyTorch, etc.)
+   - Download pretrained models to `AlphaPose/pretrained_models/`
+   - See: https://github.com/MVIG-SJTU/AlphaPose/blob/master/docs/INSTALL.md
+
+3. Ensure the `AlphaPose/` directory is in the project root (same level as `models.ipynb`)
+
+#### OpenPose Setup
+
+**Option 1: Pre-built Binaries (Recommended for Windows)**
+
+1. Download pre-built binaries from:
+   https://github.com/CMU-Perceptual-Computing-Lab/openpose/releases
+
+2. Extract to `openpose/` directory in the project root
+
+3. Download models using the included script:
+   ```bash
+   cd openpose/models
+   getBaseModels.bat  # Windows
+   # or getBaseModels.sh  # Linux/Mac
+   ```
+
+**Option 2: Build from Source**
+
+1. Follow the build instructions:
+   https://github.com/CMU-Perceptual-Computing-Lab/openpose#installation
+
+2. Place the built `openpose/` directory in the project root
+
+3. Ensure the binary is at: `openpose/bin/OpenPoseDemo.exe` (Windows) or `openpose/bin/OpenPoseDemo` (Linux/Mac)
 
 ## Project Structure
 
@@ -60,11 +101,13 @@ landmarking/
 ├── yolo.ipynb                # YOLOv8 comparison
 ├── blazepose_mediapipe.ipynb # BlazePose MediaPipe comparison
 ├── mediapipe_hands.ipynb     # MediaPipe Hands detection
-├── frames/                   # Input frames
+├── AlphaPose/                # NOT INCLUDED - must download separately (see Setup)
+├── openpose/                 # NOT INCLUDED - must download separately (see Setup)
+├── frames/                   # Input frames (not tracked in git)
 │   ├── frames1/
 │   ├── frames2/              # Primary test set
 │   └── ...
-├── outputs/                  # Tool outputs
+├── outputs/                  # Tool outputs (not tracked in git)
 │   ├── alphapose/{OUTPUT_SUBDIR}/
 │   ├── openpose/{OUTPUT_SUBDIR}/
 │   ├── yolov8/{OUTPUT_SUBDIR}/
@@ -72,8 +115,10 @@ landmarking/
 │   ├── mediapipe_hands/{OUTPUT_SUBDIR}/
 │   ├── simple_landmarks/{OUTPUT_SUBDIR}/  # Baseline annotations
 │   └── comparisons/
-└── videos/                   # Source videos
+└── videos/                   # Source videos (not tracked in git)
 ```
+
+**Note:** The `AlphaPose/` and `openpose/` directories are not included in this repository due to their large size. You must download them separately (see Setup section below).
 
 ## Configuration
 
