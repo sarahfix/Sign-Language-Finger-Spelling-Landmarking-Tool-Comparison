@@ -83,11 +83,8 @@ Thumbs.db
 *.swo
 
 # AlphaPose and OpenPose directories (keep structure but ignore large files)
-# Note: These directories are kept but large binaries/models are ignored
-AlphaPose/pretrained_models/*.pth
-AlphaPose/examples/res/
-openpose/models/*.caffemodel
-openpose/models/*.prototxt
+AlphaPose/
+openpose/
 
 # Temporary files
 *.tmp

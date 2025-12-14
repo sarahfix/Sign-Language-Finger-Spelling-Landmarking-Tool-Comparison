@@ -44,7 +44,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install opencv-python numpy pandas matplotlib scipy ultralytics mediapipe
 
 # Install tool-specific dependencies
-# - AlphaPose: Follow instructions in AlphaPose/ directory
+# - AlphaPose: must download F(https://github.com/MVIG-SJTU/AlphaPose)
 # - OpenPose: Pre-built binaries included in openpose/ directory
 # - YOLOv8: Installed via ultralytics package
 # - BlazePose: Installed via mediapipe package
